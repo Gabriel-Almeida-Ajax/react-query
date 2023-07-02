@@ -80,3 +80,19 @@ function Posts (){
 }
 ```
 
+Ele oferece várias vantagens que tornam o desenvolvimento de aplicativos mais eficiente e fácil. Aqui estão algumas das principais vantagens de usar o React Query:
+
+1. Gerenciamento de estado simplificado: O React Query fornece um mecanismo simples e intuitivo para gerenciar o estado dos dados em seu aplicativo. Ele abstrai a complexidade do gerenciamento de estado, permitindo que você se concentre na lógica de negócios em vez de se preocupar com a busca, atualização e cache dos dados.
+
+2. Caching automático: O React Query possui um sistema de cache integrado que armazena em cache automaticamente os resultados das consultas feitas ao servidor. Isso permite que você exiba os dados em cache imediatamente, sem precisar fazer uma nova solicitação ao servidor, caso os dados não tenham sido alterados. O cache também é inteligente o suficiente para atualizar automaticamente os dados quando necessário.
+
+3. Reatividade e atualizações em tempo real: O React Query é reativo por natureza, o que significa que ele atualiza automaticamente a interface do usuário sempre que os dados subjacentes são alterados. Isso permite que você crie aplicativos em tempo real sem ter que se preocupar com a lógica de atualização manual da interface do usuário.
+
+4. Gestão de requisições e falhas: O React Query gerencia automaticamente as requisições feitas ao servidor, fornecendo recursos avançados para lidar com falhas de rede, retentativas de solicitações e gestão de erros. Ele também oferece recursos para exibir indicadores de carregamento, atualizar os dados em intervalos regulares e lidar com a sincronização de dados em segundo plano.
+
+5. Integração com outras bibliotecas: O React Query é altamente flexível e pode ser facilmente integrado com outras bibliotecas populares, como o React Router, Redux e Axios. Ele possui uma API extensível e permite que você personalize facilmente seu comportamento para atender às necessidades específicas do seu aplicativo.
+
+6. Melhor experiência do desenvolvedor: O React Query é projetado para facilitar o desenvolvimento de aplicativos, reduzindo a quantidade de código boilerplate necessário e fornecendo uma sintaxe clara e concisa. Ele também possui uma documentação abrangente e uma comunidade ativa, o que facilita a aprendizagem e o suporte em caso de problemas.
+
+Essas são apenas algumas das vantagens de usar o React Query. No entanto, é importante ressaltar que a escolha de uma biblioteca depende das necessidades do seu projeto e da sua familiaridade com ela. Recomenda-se explorar a documentação e exemplos do React Query para entender melhor como ele pode ajudar no seu caso específico.
+
