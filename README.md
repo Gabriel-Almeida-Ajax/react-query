@@ -59,7 +59,7 @@ import { QUERY_POSTS, getPosts } from 'services/post.service'
 function Posts (){
   // aqui utilizando o hook useQuery, tenho um motor que gerenciará o estado, ou seja,
   // atualizará a tela quando resolver a requisição, e junto todas as mudanças, como error e loading. 
-  const { data, isLoading, isError } = useQuery(QUERY_POSTS, getPosts);
+  const { data, isLoading, isError } = useQuery([QUERY_POSTS], getPosts);
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -79,6 +79,51 @@ function Posts (){
   );
 }
 ```
+
+## E se eu quisesse passar um paramêtro?
+
+```js
+// services/post.service.js
+import axios from "axios";
+
+// note que aqui passo outro nome para essa query.
+const QUERY_POST = "QUERY_POST";
+
+// função que realiza a operação, identica a anterior, onde notamos que há um contrato aqui.
+// é uma função, e não importa qual a forma que realizo a requisição, somente importa os paramêtros passados.
+// poderia também realizar utilizando o fetch. 
+const getPosts = async (postId) => {
+  return (await axios.get(
+    "https://my-json-server.typicode.com/typicode/demo/posts/" + postId
+  )).data;
+};
+```
+
+```js
+// components/Post.jsx
+import { QUERY_POST, getPost } from 'services/post.service'
+
+function Posts ({ postId }){
+  // Onde passamos o nome da query, podemos também passar mais um paramêtro de dependencia, 
+  // onde fará a request toda vez que seja alterado. e realizando as mesmas tratativas,
+  // sem depender de um useEffect e useStates para controlar as mudanças
+  const { data: post, isLoading, isError } = useQuery([QUERY_POSTS, postId], async () => await getPost(postId);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>Error</div>;
+  }
+  return (
+    <>
+      <div key={post.id}>
+        <h2>{post.title}</h2>
+      </div>
+    </>
+  );
+}
+```
+
 
 Ele oferece várias vantagens que tornam o desenvolvimento de aplicativos mais eficiente e fácil. Aqui estão algumas das principais vantagens de usar o React Query:
 
